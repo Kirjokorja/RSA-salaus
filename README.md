@@ -1,2 +1,2 @@
-[Määrittelyasiakirja](dokumentaatio/maarittely.md)
-[Viikkoraportti 1](dokumentaatio/viikkoraportti1.md)
+- [Määrittelyasiakirja](dokumentaatio/maarittely.md)
+- [Viikkoraportti 1](dokumentaatio/viikkoraportti1.md)
