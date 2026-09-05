@@ -10,7 +10,7 @@ Ohjelma luo salaisen ja julkisen avaimen luomalla satunnaiset alkuluvut p ja q k
 
 Rakennan ohjelmani Pythonilla. Pythonin lisäksi minulla on kokemusta Javasta, C#:sta sekä vähän C++:sta.
 
-## Aikavaativuus
+## Aika- ja tilavaativuus
 
 **Salaamisen aikavaativuus:** O(kn^3), missä n on Miller-Rabinin testaaman luvun bittien määrä ja k testattujen lukujen määrä ennen kuin alkuluku löytyy\
 **Salauksen purkamisen aikavaativuus:** O(n), missä n on salatun viestin pituus bitteinä\
