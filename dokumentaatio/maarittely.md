@@ -14,7 +14,7 @@ Rakennan ohjelmani Pythonilla. Pythonin lisäksi minulla on kokemusta Javasta, C
 
 **Salaamisen aikavaativuus:** O(kn^3), missä n on Miller-Rabinin testaaman luvun bittien määrä ja k testattujen lukujen määrä ennen kuin alkuluku löytyy\
 **Salauksen purkamisen aikavaativuus:** O(n), missä n on salatun viestin pituus bitteinä\
-**Tilavaativuus molemmissa tapauksissa:** O(n), missä n on salattavan tai purettavan viestin pituus bitteinä\
+**Tilavaativuus molemmissa tapauksissa:** O(n), missä n on salattavan tai purettavan viestin pituus bitteinä
 
 ## Käytettävät lähteet
 
