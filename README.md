@@ -25,7 +25,7 @@
 poetry install
 ```
 
-3. Käynnistä sovellus käskyllä*:
+3. Käynnistä sovellus käskyllä:
 
 ```bash
 python3 src/index.py
