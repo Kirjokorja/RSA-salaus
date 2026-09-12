@@ -1,7 +1,7 @@
 import math
 
 def get_primes_list(biggest_num):
-    numbers = [n for n in range(2, biggest_num+2)]
+    numbers = list(range(2, biggest_num+2))
     numbers[-1] = -1
     n = 2
     i = 1
