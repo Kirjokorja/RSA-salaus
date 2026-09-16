@@ -23,5 +23,4 @@ def get_primes_list(biggest_num):
             last = j
             i = start
             j = i
-    primes = numbers[:last]
-    return primes
+    return numbers[:last]

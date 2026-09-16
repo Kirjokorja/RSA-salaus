@@ -1,13 +1,13 @@
-from invoke import task
-from subprocess import call
+from subprocess import call, run
 from sys import platform
+from invoke import task
 
 @task
 def start(ctx):
     if platform == "win32":
-        ctx.run("python3 src/index.py")
+        run("python3 src/index.py", check=True)
     else:
-        ctx.run("python3 src/index.py", pty=True)
+        run("python3 src/index.py", check=True)
 
 @task
 def test(ctx):
@@ -27,7 +27,7 @@ def coverage(ctx):
 def coverage_report(ctx):
     if platform == "win32":
         ctx.run("coverage html")
-        ctx.run("start htmlvov/index.html")
+        ctx.run("start htmlcov/index.html")
     else:
         ctx.run("coverage html", pty=True)
         call(("xdg-open", "htmlcov/index.html"))
