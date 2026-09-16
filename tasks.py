@@ -7,7 +7,7 @@ def start(ctx):
     if platform == "win32":
         run("python3 src/index.py", check=True)
     else:
-        run("python3 src/index.py", check=True)
+        ctx.run("python3 src/index.py")
 
 @task
 def test(ctx):
