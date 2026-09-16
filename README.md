@@ -7,8 +7,9 @@
 
 ## Viikkoraportit
 
-- [Viikkoraportti 1](dokumentaatio/viikkoraportti1.md)
-- [Viikkoraportti 2](dokumentaatio/viikkoraportti2.md)
+- [Viikkoraportti 1](dokumentaatio/viikkoraportit/viikkoraportti1.md)
+- [Viikkoraportti 2](dokumentaatio/viikkoraportit/viikkoraportti2.md)
+- [Viikkoraportti 3](dokumentaatio/viikkoraportit/viikkoraportti3.md)
 
 ## Sovelluksen käyttö
 
@@ -29,5 +30,5 @@ poetry install
 3. Käynnistä sovellus käskyllä:
 
 ```bash
-poetry run src/index.py
+poetry run invoke start
 ```
