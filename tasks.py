@@ -1,13 +1,13 @@
-from subprocess import call, run
+from subprocess import call
 from sys import platform
 from invoke import task
 
 @task
 def start(ctx):
     if platform == "win32":
-        run("python3 src/index.py", check=True)
+        ctx.run("python3 src/index.py")
     else:
-        ctx.run("python3 src/index.py", pty=True, asynchronous=False)
+        ctx.run("python3 src/index.py", pty=True)
 
 @task
 def test(ctx):
