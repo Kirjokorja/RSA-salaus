@@ -6,4 +6,4 @@ Eratostheneen seula on yksikkötestattu TestErathosthenesSieve-luokalla. Luokka 
 
 ## Testikattavuus
 
-![](./kuvat/testikattavuus2026-09-12%2021-21-56.png)
+![](./kuvat/testikattavuus2026-09-12.png)
