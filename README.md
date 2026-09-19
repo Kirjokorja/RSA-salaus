@@ -32,3 +32,27 @@ poetry install
 ```bash
 poetry run invoke start
 ```
+
+### Testaus
+
+Voit ajaa testit käskyllä:
+
+```bash
+poetry run invoke test
+```
+
+### Testikattavuus
+
+Testikattavuuskertomuksen voi muodostaa käskyllä:
+
+```bash
+poetry run invoke coverage-report
+```
+
+### Koodin laaduntarkastus
+
+Koodin laadun voi tarkistaa käskyllä:
+
+```bash
+poetry run invoke lint
+```

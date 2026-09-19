@@ -2,7 +2,7 @@
 
 Sain toteutettua ainakin näennäisesti Miller-Rabinin, mutta en kerennyt juurikaan testata sitä. Minulla vaikuttaa olevan hankaluuksia hahmottaa yhdistettyjen lukujen etsintää. Onko is_composite-funktio menossa edes oikeaan suuntaan?
 
-Vaihdoin ohjelmani käyttämään Python 12:sta ja tiputin Invoken julkaisuun 2. Nyt taskit vaikuttavat toimivan.
+Vaihdoin ohjelmani käyttämään Python 12:sta ja tiputin Invoken julkaisuun 2. Nyt taskit vaikuttavat toimivan. Pylint oli jo viime viikolla käytössä, mutta en muistanut sitä mainita.
 
 Seuraavaksi jatkan Miller-Rabinin testaamista ja pyrin saamaan alkulukuparin etsinnän toimivaksi kokonaisuudeksi.
 
