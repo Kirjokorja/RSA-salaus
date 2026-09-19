@@ -15,7 +15,7 @@
 
 ### Alkutoimet
 
-1. Varmista, että koneellasi on asennettuna vähintään `Python`-versio `3.12`.
+1. Varmista, että koneellasi on asennettuna `Python`-versio `3.12`.
 2. Varmista, että koneellasi on asennettuna vähintään `Poetry`-versio `2.0.0`.
 3. Vedä RSA-salaus-projekti etärepositoriosta koneellesi.
 
