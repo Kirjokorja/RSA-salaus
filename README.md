@@ -51,6 +51,8 @@ Testikattavuuskertomuksen voi muodostaa käskyllä:
 poetry run invoke coverage-report
 ```
 
+### Koodin muotoileminen
+
 Lähdekoodin voi muotoilla käskyllä:
 
 ```bash
