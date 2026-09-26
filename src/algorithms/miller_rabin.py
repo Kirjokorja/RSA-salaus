@@ -12,14 +12,14 @@ def find_odd(n):
 
 def is_composite(n, witness):
     odd = find_odd(n)
-    remainder = pow(witness, odd, mod=n)
+    previous = pow(witness, odd, mod=n)
     while odd != n - 1:
-        y = remainder**2 % n
+        current = previous**2 % n
         odd *= 2
-        if y == 1 and remainder != 1 and remainder != n-1:
+        if current == 1 and previous != 1 and previous != n - 1:
             return True
-        remainder = y
-    if remainder != 1:
+        previous = current
+    if previous != 1:
         return True
     return False
 
@@ -27,8 +27,10 @@ def is_composite(n, witness):
 def is_prime(n):
     if n == 1:
         return False
-    for i in range(1, n.bit_lenght()):
+    i = 0
+    while i < n.bit_lenght():
         witness = secrets.choice(range(2, n-2))
         if is_composite(n, witness):
             return False
+        i += 1
     return True
