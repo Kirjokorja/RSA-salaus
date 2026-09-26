@@ -4,11 +4,14 @@ from algorithms import miller_rabin
 
 
 def is_prime(n):
+    if n < 2:
+        return False
     small_primes = sieve.get_primes_list(1000)
     for p in small_primes:
-        if n % p != 0:
-            if miller_rabin.is_prime(n):
-                return True
+        if n % p == 0:
+            return False
+    if miller_rabin.is_prime(1001, n):
+        return True
     return False
 
 

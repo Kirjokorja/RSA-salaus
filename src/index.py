@@ -1,9 +1,9 @@
-from algorithms import (eratosthenes_sieve as sieve)
+from algorithms import primes
 
 
 def main():
-    upper_bound = input("Anna ylin luku alkulukulistalle: ")
-    print(sieve.get_primes_list(int(upper_bound)))
+    bit_size = input("Anna alkulukujen suuruusluokka bitteinä: ")
+    print(primes.get_two_random_primes(int(bit_size)))
 
 
 if __name__ == "__main__":

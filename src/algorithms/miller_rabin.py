@@ -24,13 +24,14 @@ def is_composite(n, witness):
     return False
 
 
-def is_prime(n):
-    if n == 1:
+def is_prime(lower_bound, n):
+    if n < 2:
         return False
-    i = 0
-    while i < n.bit_lenght():
-        witness = secrets.choice(range(2, n-2))
+    k = 0
+    sys_rand = secrets.SystemRandom()
+    while k < n.bit_length():
+        witness = sys_rand.randint(lower_bound, n-2)
         if is_composite(n, witness):
             return False
-        i += 1
+        k += 1
     return True
