@@ -1,5 +1,6 @@
 import secrets
 
+
 def find_odd(n):
     if n < 2:
         return -1
@@ -8,27 +9,26 @@ def find_odd(n):
         odd //= 2
     return odd
 
+
 def is_composite(n, witness):
     odd = find_odd(n)
     remainder = pow(witness, odd, mod=n)
-    if remainder == 1 or remainder == n - 1:
-        return False
     while odd != n - 1:
-        remainder = remainder**2 % n
+        y = remainder**2 % n
         odd *= 2
-        if remainder == 1:
+        if y == 1 and remainder != 1 and remainder != n-1:
             return True
+        remainder = y
     if remainder != 1:
         return True
     return False
 
+
 def is_prime(n):
     if n == 1:
         return False
-    binary = bin(n)[2:]
-    num_witnesses = len(binary)-1
-    for i in range(1, num_witnesses):
-        witness = secrets.choice(range(1, n-1))
+    for i in range(1, n.bit_lenght()):
+        witness = secrets.choice(range(2, n-2))
         if is_composite(n, witness):
             return False
     return True

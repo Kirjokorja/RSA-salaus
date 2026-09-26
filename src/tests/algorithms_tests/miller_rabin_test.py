@@ -1,6 +1,7 @@
 import unittest
 from algorithms import miller_rabin
 
+
 class TestMillerRabin(unittest.TestCase):
 
     def test_find_odd_returns_negative_for_smaller_than_2(self):

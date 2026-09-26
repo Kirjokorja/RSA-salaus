@@ -38,3 +38,10 @@ def lint(ctx):
         ctx.run("pylint src")
     else:
         ctx.run("pylint src", pty=True)
+
+@task
+def format_code(ctx):
+    if platform == "win32":
+        ctx.run("autopep8 --in-place --recursive src")
+    else:
+        ctx.run("autopep8 --in-place --recursive src", pty=True)

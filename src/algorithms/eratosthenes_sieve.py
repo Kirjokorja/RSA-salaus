@@ -1,5 +1,6 @@
 import math
 
+
 def get_primes_list(biggest_num):
     numbers = list(range(2, biggest_num+2))
     numbers[-1] = -1
