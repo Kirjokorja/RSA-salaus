@@ -11,6 +11,17 @@ def find_odd(n):
 
 
 def is_composite(n, witness):
+    """Funktio selvittää onko annettu luku yhdistetty luku.
+
+    Args:
+        n (unsigned long long): luku, jonka yhdistyneisyyttä selvitetään
+        witness (unsigned long long): luku, jota käytetään todistamaan
+        testattavan luvun yhdistyneisyys
+
+    Returns:
+        bool: palauttaa True, jos luku on yhdistetty luku ja 
+        False, jos se todennäköisesti ei ole
+    """
     odd = find_odd(n)
     previous = pow(witness, odd, mod=n)
     while odd != n - 1:
@@ -25,6 +36,16 @@ def is_composite(n, witness):
 
 
 def is_prime(lower_bound, n):
+    """Funktio selvittää onko annettu luku alkuluku käyttäen Miller-Rabin-algoritmiä.
+
+    Args:
+        lower_bound (int): luku, jota pienempiä ei hyväksytä satunnaiseksi koetinluvuksi
+        n (unsigned long long): luku, jonka alkulukuisuutta selvitetään 
+
+    Returns:
+        bool: palauttaa True, jos luku on todennäköisesti alkuluku ja 
+        False, jos se ei ole alkuluku
+    """
     if n < 2:
         return False
     k = 0

@@ -4,12 +4,14 @@
 
 - [Määrittelyasiakirja](dokumentaatio/maarittely.md)
 - [Testausasiakirja](dokumentaatio/testaus.md)
+- [Toteutusasiakirja](dokumentaatio/toteutus.md)
 
 ## Viikkoraportit
 
 - [Viikkoraportti 1](dokumentaatio/viikkoraportit/viikkoraportti1.md)
 - [Viikkoraportti 2](dokumentaatio/viikkoraportit/viikkoraportti2.md)
 - [Viikkoraportti 3](dokumentaatio/viikkoraportit/viikkoraportti3.md)
+- [Viikkoraportti 4](dokumentaatio/viikkoraportit/viikkoraportti4.md)
 
 ## Sovelluksen käyttö
 
@@ -47,6 +49,12 @@ Testikattavuuskertomuksen voi muodostaa käskyllä:
 
 ```bash
 poetry run invoke coverage-report
+```
+
+Lähdekoodin voi muotoilla käskyllä:
+
+```bash
+poetry run invoke format-code
 ```
 
 ### Koodin laaduntarkastus

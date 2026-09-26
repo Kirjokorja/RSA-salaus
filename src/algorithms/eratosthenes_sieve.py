@@ -2,6 +2,14 @@ import math
 
 
 def get_primes_list(biggest_num):
+    """Funktio tuottaa listan alkulukuja annettuun lukuunasti käyttäen Eratostheneen seulaa.
+
+    Args:
+        biggest_num (int): luku, johon asti alkulukuja etsitään
+
+    Returns:
+        List: lista alkulukuja
+    """
     numbers = list(range(2, biggest_num+2))
     numbers[-1] = -1
     n = 2

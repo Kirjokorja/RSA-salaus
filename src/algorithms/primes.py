@@ -4,6 +4,16 @@ from algorithms import miller_rabin
 
 
 def is_prime(n):
+    """Funktio selvittää onko annettu luku alkuluku käyttäen
+    Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.
+
+    Args:
+        n (unsigned long long): luku, jonka alkulukuisuutta selvitetään
+
+    Returns:
+        bool: palauttaa True, jos luku on todennäköisesti alkuluku ja
+        False, jos se ei ole alkuluku
+    """
     if n < 2:
         return False
     small_primes = sieve.get_primes_list(1000)
@@ -16,6 +26,15 @@ def is_prime(n):
 
 
 def get_two_random_primes(bit_size):
+    """Funktio tuottaa kaksi annetun kokoista eri alkulukua käyttäen
+    Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.
+
+    Args:
+        bit_size (int): alkulukujen suuruusluokka
+
+    Returns:
+        Set(unsigned long long): alkulukupari
+    """
     p = secrets.randbits(bit_size)
     tried = set()
     while p in tried or not is_prime(p):
