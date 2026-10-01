@@ -12,6 +12,7 @@
 - [Viikkoraportti 2](dokumentaatio/viikkoraportit/viikkoraportti2.md)
 - [Viikkoraportti 3](dokumentaatio/viikkoraportit/viikkoraportti3.md)
 - [Viikkoraportti 4](dokumentaatio/viikkoraportit/viikkoraportti4.md)
+- [Viikkoraportti 5](dokumentaatio/viikkoraportit/viikkoraportti5.md)
 
 ## Sovelluksen käyttö
 
