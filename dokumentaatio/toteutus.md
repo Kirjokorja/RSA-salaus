@@ -18,3 +18,9 @@ Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L.ja Stein, Clifford: *
 
 *secrets — Generate secure random numbers for managing secrets*. Pythonin dokumentaation sivu, 2026. https://docs.python.org/3/library/secrets.html, vierailtu 2026-09-26.
 
+*Random Small Primes - 10 to 100 digits (page 1 of 3)*. PrimePages-sivuston sivu, 2021. https://t5k.org/lists/small/small.html, vierailtu 2026-10-03.
+
+*Random Small Primes - 210 to 300 digits (page 3 of 3)*. PrimePages-sivuston sivu, 2021. https://t5k.org/lists/small/small3.html, vierailtu 2026-10-03.
+
+*List of prime numbers*. Wikipedian sivu, 2026. https://en.wikipedia.org/wiki/List_of_prime_numbers, vierailtu 2026-10-03.
+

@@ -1,15 +1,6 @@
 import secrets
 
 
-def find_odd(n):
-    if n < 2:
-        return -1
-    odd = n - 1
-    while odd % 2 == 0:
-        odd //= 2
-    return odd
-
-
 def is_composite(n, witness):
     """Funktio selvittää onko annettu luku yhdistetty luku.
 
@@ -22,7 +13,9 @@ def is_composite(n, witness):
         bool: palauttaa True, jos luku on yhdistetty luku ja 
         False, jos se todennäköisesti ei ole
     """
-    odd = find_odd(n)
+    odd = n - 1
+    while odd % 2 == 0:
+        odd //= 2
     previous = pow(witness, odd, mod=n)
     while odd != n - 1:
         current = previous**2 % n
@@ -48,6 +41,10 @@ def is_prime(lower_bound, n):
     """
     if n < 2:
         return False
+    if n < 4:
+        return True
+    if lower_bound > n-2:
+        lower_bound = 2
     k = 0
     sys_rand = secrets.SystemRandom()
     while k < n.bit_length():

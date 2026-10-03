@@ -7,7 +7,9 @@ class PrimesGenerator:
     """Luokka vastaa alkulukujen luonnista.
 
         Attributes:
-            _small_primes (List(int)): lista pieniä alkulukuja
+            _small_primes (List): lista pieniä alkulukuja
+            _max_small_primes (int): luku määrittää mihin asti 
+                generaattori laskee pieniä alkulukuja Eratostheneen seulalla
     """
 
     def __init__(self, max_small_primes):
@@ -17,10 +19,11 @@ class PrimesGenerator:
                 max_small_primes (int): luku määrittää mihin asti 
                 generaattori laskee pieniä alkulukuja Eratostheneen seulalla
         """
-        self._small_primes = sieve.get_primes_list(max_small_primes)
+        self._max_small_primes = max_small_primes
+        self._small_primes = sieve.get_primes_list(self._max_small_primes)
 
     def is_prime(self, n):
-        """Funktio selvittää onko annettu luku alkuluku käyttäen
+        """Metodi selvittää onko annettu luku alkuluku käyttäen
         Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.
 
         Args:
@@ -34,14 +37,16 @@ class PrimesGenerator:
             return False
 
         for p in self._small_primes:
+            if n == p:
+                return True
             if n % p == 0:
                 return False
-        if miller_rabin.is_prime(1001, n):
+        if miller_rabin.is_prime(self._max_small_primes + 1, n):
             return True
         return False
 
     def get_two_random_primes(self, bit_size):
-        """Funktio tuottaa kaksi annetun kokoista eri alkulukua käyttäen
+        """Metodi tuottaa kaksi annetun kokoista eri alkulukua käyttäen
         Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.
 
         Args:
