@@ -18,7 +18,7 @@ Rakennan ohjelmani Pythonilla. Pythonin lisäksi minulla on kokemusta Javasta, C
 
 ## Käytettävät lähteet
 
-Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L.ja Stein, Clifford: Intoduction to Algorithms, Third Edition, Cambridge, Massachusetts, London, England, 2009, The MIT Press, ISBN 978-0-262-03384-8.
+Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. ja Stein, Clifford: Introduction to Algorithms, Third Edition, Cambridge, Massachusetts, London, England, 2009, The MIT Press, ISBN 978-0-262-03384-8.
 
 Liu, David ja Badr, Mario: Foundations of Computer Science, Course Notes for CSC110 and CSC111, https://www.teach.cs.toronto.edu/~csc110y/fall/notes/.
 
