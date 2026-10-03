@@ -12,7 +12,7 @@ Miller-Rabin-algoritmiä on testattu TestMillerRabin-luokalla. Algoritimiä on t
 
 ### PrimesGenerator-luokka
 
-PrimesGenerator-luokkaa on testattu luokalla TestPrimesGenerator, joka testaa gunktiota metodia is_prime kolme, neljä, kahdeksan, kymmenen, 35 100, 290 ja 300 -yksikköisillä tunnetuilla alkuluvuilla ja niiden tuloista saaduilla yhdistetyillä luvuilla sekä ääriarvolla 2.
+PrimesGenerator-luokkaa on testattu luokalla TestPrimesGenerator, joka testaa metodia is_prime kolme, neljä, kahdeksan, kymmenen, 35 100, 290 ja 300 -yksikköisillä tunnetuilla alkuluvuilla ja niiden tuloista saaduilla yhdistetyillä luvuilla sekä ääriarvolla 2.
 
 ## Testikattavuus
 
