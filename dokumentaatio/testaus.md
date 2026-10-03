@@ -10,6 +10,8 @@ Eratostheneen seula on yksikkötestattu TestErathosthenesSieve-luokalla. Luokka 
 
 Miller-Rabin-algoritmiä on testattu TestMillerRabin-luokalla. Algoritimiä on testattu kahdeksan, kymmenen, 38 100, 290 ja 300 -yksikköisillä tunnetuilla alkuluvuilla ja niiden tuloista saaduilla yhdistetyillä luvuilla. Lisäksi sitä on testattu luvuilla yksi, kaksi, kolme sekä negatiivisella luvulla. Koska kyseiselle Miller-Rabinille annetaan alaraja, jotta se ei testaisi Eratostheneen seulan lukuja on algoritmiä testattu alarajalla, joka on suurempi kuin alkulukuehdokas - 2. Tällöin algoritmi asettaa uudeksi alarajaksi luvun kaksi, jolloin se edelleen toimii.
 
+## Alkulukujen luonti
+
 ### PrimesGenerator-luokka
 
 PrimesGenerator-luokkaa on testattu luokalla TestPrimesGenerator, joka testaa metodia is_prime kolme, neljä, kahdeksan, kymmenen, 35 100, 290 ja 300 -yksikköisillä tunnetuilla alkuluvuilla ja niiden tuloista saaduilla yhdistetyillä luvuilla sekä ääriarvolla 2.
