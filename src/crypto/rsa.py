@@ -24,7 +24,7 @@ class RSACrypto:
         # euclid[1] = e^-1 mod phi_n (multiplicative inverse of  e, modulo n)
         # (euclid[1] % phi_n + phi_n) % phi_n, makes sure that d is positive,
         # since euclid[1] may be negative.
-        # Taking the remainder keeps the d as a valid residue class.
+        # Taking the remainder keeps d as a valid residue class.
         d = (euclid[1] % phi_n + phi_n) % phi_n
         keys = {
             "public": (e, n),
