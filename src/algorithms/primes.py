@@ -48,10 +48,10 @@ class PrimesGenerator:
     def get_random_prime(self, bit_size):
         """Metodi tuottaa annetun kokoisen alkuluvun käyttäen
                 Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.
-        
+
             Args:
                 bit_size (int): alkuluvun suuruusluokka
-    
+
             Returns:
                 p (unsigned long long): alkuluku
         """

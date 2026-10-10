@@ -1,6 +1,7 @@
 import secrets
 from algorithms.euclid import extended_euclid
 
+
 class RSACrypto:
 
     def __init__(self, prime_gen):
@@ -14,10 +15,16 @@ class RSACrypto:
         phi_n = (p - 1) * (q - 1)
 
         e = self._sys_rand.randint(2, phi_n - 1)
+        # euclid = (gcd(e, phi_n), x, y)
         euclid = extended_euclid(e, phi_n)
         while euclid[0] != 1:
             e = self._sys_rand.randint(2, phi_n - 1)
             euclid = extended_euclid(e, phi_n)
+        # e and phi_n are coprime, because 1 = gcd(e phi_n) = e*x +  phi_n*y.
+        # euclid[1] = e^-1 mod phi_n (multiplicative inverse of  e, modulo n)
+        # (euclid[1] % phi_n + phi_n) % phi_n, makes sure that d is positive,
+        # since euclid[1] may be negative.
+        # Taking the remainder keeps the d as a valid residue class.
         d = (euclid[1] % phi_n + phi_n) % phi_n
         keys = {
             "public": (e, n),

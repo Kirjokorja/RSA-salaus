@@ -16,4 +16,4 @@ PrimesGenerator-luokkaa on testattu luokalla TestPrimesGenerator, joka testaa me
 
 ## Testikattavuus
 
-![](./kuvat/testikattavuus2026-10-03.jpg)
+![](./kuvat/testikattavuus2026-10-10.jpg)
