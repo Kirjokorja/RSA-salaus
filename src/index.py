@@ -1,10 +1,13 @@
 from algorithms.primes import PrimesGenerator
+from crypto.rsa import RSACrypto
 
 
 def main():
     prime_gen = PrimesGenerator(10000)
-    bit_size = input("Anna alkulukujen suuruusluokka bitteinä: ")
-    print(prime_gen.get_two_random_primes(int(bit_size)))
+    crypto = RSACrypto(prime_gen)
+    keys = crypto.generate_keys()
+    print(f"Julkinen: {keys["public"]}")
+    print(f"Salainen: {keys["secret"]}")
 
 
 if __name__ == "__main__":

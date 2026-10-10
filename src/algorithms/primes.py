@@ -45,6 +45,21 @@ class PrimesGenerator:
             return True
         return False
 
+    def get_random_prime(self, bit_size):
+        """Metodi tuottaa annetun kokoisen alkuluvun käyttäen
+                Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.
+        
+            Args:
+                bit_size (int): alkuluvun suuruusluokka
+    
+            Returns:
+                p (unsigned long long): alkuluku
+        """
+        p = secrets.randbits(bit_size)
+        while not self.is_prime(p):
+            p = secrets.randbits(bit_size)
+        return p
+
     def get_two_random_primes(self, bit_size):
         """Metodi tuottaa kaksi annetun kokoista eri alkulukua käyttäen
         Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.

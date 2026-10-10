@@ -6,7 +6,7 @@ En ole käyttänyt laajoja kielimalleja työssäni.
 
 ## Lähteet
 
-Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L.ja Stein, Clifford: *Intoduction to Algorithms, Third Edition*, sivut 958-975 Cambridge, Massachusetts, London, England, 2009, The MIT Press, ISBN 978-0-262-03384-8.
+Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L.ja Stein, Clifford: *Intoduction to Algorithms, Third Edition*, sivut 933-950, 958-975 Cambridge, Massachusetts, London, England, 2009, The MIT Press, ISBN 978-0-262-03384-8.
 
 *Eratostheneen seula*. Wikipedian sivu, 2024. https://fi.wikipedia.org/wiki/Eratostheneen_seula, vierailtu 2026-09-26.
 
@@ -24,3 +24,12 @@ Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L.ja Stein, Clifford: *
 
 *List of prime numbers*. Wikipedian sivu, 2026. https://en.wikipedia.org/wiki/List_of_prime_numbers, vierailtu 2026-10-03.
 
+*Modular Multiplicative Inverse*. Algorithms for Competitive Programming -sivuston sivu, 2025. https://cp-algorithms.com/algebra/module-inverse.html#finding-the-modular-inverse-for-prime-moduli-using-euclidean-division, vierailtu 2026-10-10.
+
+*Extended Euclidean Algorithm*. Algorithms for Competitive Programming -sivuston sivu, 2025. https://cp-algorithms.com/algebra/extended-euclid-algorithm.html, vierailtu 2026-10-10.
+
+*Python Program for Extended Euclidean Algorithms*. GeeksforGeeks-sivuston sivu, 2025. https://www.geeksforgeeks.org/python/python-program-for-basic-and-extended-euclidean-algorithms-2/, vierailtu 2026-10-10.
+
+Liu, David ja Badr, Mario: *Foundations of Computer Science, Course Notes for CSC110 and CSC111: 8.5 Implementing RSA in Python*. Toronton yliopiston verkkosivu, 2026. https://www.teach.cs.toronto.edu/~csc110y/fall/notes/08-cryptography/05-rsa-cryptosystem-implementation.html, vierailtu 2026-10-10.
+
+*RSA cryptosystem*. Wikipedian sivu, 2026. https://en.wikipedia.org/wiki/RSA_cryptosystem, vierailtu 2026-10-10.

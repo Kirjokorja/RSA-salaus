@@ -12,10 +12,7 @@ def get_primes_list(biggest_num):
     """
     numbers = list(range(2, biggest_num+2))
     numbers[-1] = -1
-    n = 2
-    i = 1
-    j = 1
-    start = 1
+    n, i, j, start = 2, 1, 1, 1
     last = biggest_num-1
     while n < math.sqrt(biggest_num):
         if numbers[i] % n == 0:
