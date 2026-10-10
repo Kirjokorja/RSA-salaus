@@ -25,8 +25,22 @@ class RSACrypto:
         }
         return keys
 
-    def rsa_encrypt(self, p_key, m):
+    def encrypt(self, p_key, m):
         return pow(m, p_key[0], p_key[1])
 
-    def rsa_decrypt(self, s_key, cipher_m):
+    def decrypt(self, s_key, cipher_m):
         return pow(cipher_m, s_key[0], s_key[1])
+
+    def encrypt_text(self, p_key, text):
+        encrypted = ""
+        for l in text:
+            cipher_l = self.encrypt(p_key, ord(l))
+            encrypted = encrypted + chr(cipher_l)
+        return encrypted
+
+    def decrypt_text(self, s_key, encrypted):
+        decrypted = ""
+        for cipher_l in encrypted:
+            l = self.decrypt(s_key, ord(cipher_l))
+            decrypted = decrypted + chr(l)
+        return decrypted
