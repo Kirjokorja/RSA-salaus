@@ -47,7 +47,7 @@ def is_prime(lower_bound, n):
         lower_bound = 2
     k = 0
     sys_rand = secrets.SystemRandom()
-    while k < n.bit_length():
+    while k < 50:
         witness = sys_rand.randint(lower_bound, n-2)
         if is_composite(n, witness):
             return False
