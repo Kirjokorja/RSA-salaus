@@ -22,7 +22,7 @@ class UI:
         message = input("Kirjoita salattava viesti: ")
         try:
             encrypted = self._crypto_service.encrypt_text(key_pair, message)
-            print(f"\n{encrypted}\n")
+            print(f"\nSalattu viesti: {encrypted}\n")
         except self._crypto_service.get_exceptions().MessageIsTooLong as e:
             print(f"\n{e.message}\n")
 
@@ -36,7 +36,7 @@ class UI:
             return
         message = input("Kirjoita salattu viesti: ")
         decrypted = self._crypto_service.decrypt_text(key_pair, message)
-        print(f"\n{decrypted}\n")
+        print(f"\nPurettu viesti:\n{decrypted}\n")
 
     def start(self):
         print("Luo uusi avainpari: syötä 'a'.")
