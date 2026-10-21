@@ -2,6 +2,7 @@ import secrets
 from algorithms.euclid import extended_euclid
 from exceptions import (rsa_exceptions as default_exceptions)
 
+
 class RSACrypto:
 
     def __init__(self, prime_gen, exceptions=default_exceptions):
@@ -37,8 +38,9 @@ class RSACrypto:
         return keys
 
     def _encrypt(self, p_key, m):
-        if m >=  p_key[1]:
-            raise self._exceptions.MessageIsTooLong("Salattava viesti on liian pitkä.")
+        if m >= p_key[1]:
+            raise self._exceptions.MessageIsTooLong(
+                "Salattava viesti on liian pitkä.")
         return pow(m, p_key[0], p_key[1])
 
     def _decrypt(self, s_key, cipher_m):
