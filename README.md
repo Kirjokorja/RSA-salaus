@@ -36,7 +36,7 @@ poetry install
 poetry run invoke start
 ```
 
-*Windowsilla ohjelma kannattaa ajaa suoraan komennolla `poetry run python3 src/index.py`, koska Invoke vaikuttaa takkuilevan sillä komentorivikäyttöliittymää käyttävien ohjelmien kanssa.
+*`Windows`-käyttöjärjestelmällä ohjelma kannattaa ajaa suoraan komennolla `poetry run python3 src/index.py`, koska Invoke vaikuttaa takkuilevan Windowsin komentorivikäyttöliittymää käyttävien ohjelmien kanssa.
 
 ### Testaus
 
