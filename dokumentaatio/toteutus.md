@@ -33,3 +33,5 @@ Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L.ja Stein, Clifford: *
 Liu, David ja Badr, Mario: *Foundations of Computer Science, Course Notes for CSC110 and CSC111: 8.5 Implementing RSA in Python*. Toronton yliopiston verkkosivu, 2026. https://www.teach.cs.toronto.edu/~csc110y/fall/notes/08-cryptography/05-rsa-cryptosystem-implementation.html, vierailtu 2026-10-10.
 
 *RSA cryptosystem*. Wikipedian sivu, 2026. https://en.wikipedia.org/wiki/RSA_cryptosystem, vierailtu 2026-10-10.
+
+*Built-in Types*. Pythonin dokumentaation sivu, 2026. https://docs.python.org/3/builtins/stdtypes.html, vierailtu 2026-10-22.

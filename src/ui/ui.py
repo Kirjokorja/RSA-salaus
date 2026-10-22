@@ -27,7 +27,8 @@ class UI:
             print(f"\n{e.message}\n")
 
     def _decrypt_message(self):
-        secret_key_e = input("\nAnna yksityisen avainparin ensimmäinen avain: ")
+        secret_key_e = input(
+            "\nAnna yksityisen avainparin ensimmäinen avain: ")
         secret_key_n = input("\nAnna yksityisen avainparin toinen avain: ")
         try:
             key_pair = (int(secret_key_e), int(secret_key_n))

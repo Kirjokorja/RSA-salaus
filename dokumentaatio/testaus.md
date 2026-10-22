@@ -16,6 +16,12 @@ Miller-Rabin-algoritmiä on testattu TestMillerRabin-luokalla. Algoritimiä on t
 
 PrimesGenerator-luokkaa on testattu luokalla TestPrimesGenerator, joka testaa metodia is_prime kolme, neljä, kahdeksan, kymmenen, 35 100, 290 ja 300 -yksikköisillä tunnetuilla alkuluvuilla ja niiden tuloista saaduilla yhdistetyillä luvuilla sekä ääriarvolla 2.
 
+### RSACrypto-luokka
+
+RSACrypto-luokkaa on testattu luokalla TestRSACrypto. Testiuokka testaa, että generate_keys-metodi tuottaa bittikooltaan suurempia avaimia kuin RSACrypto-luokan key_size-attribuutti, mutta kuitenkin pienempiä kuin key_size tuplattuna. Tätä se testaa attribuutin arvoilla 64 ja 2048. Testiluokka testaa myös, että metodi palauttaa Dictonary-tietorakenteen, joka sisältää kaksi Tuple-rakennetta, joista löytyy avainparit kokonaislukuina.
+
+Lisäksi testiluokka testaa encrypt_text ja decrypt_text -metodeja eri merkkejä ja numeroita sisältävillä eri kokoisilla viesteillä sekä eri kokoisilla avaimilla, joidenka key_size-attribuutin arvo on väliltä 64-2048 bittiä. encrypt_text-metodin palautusarvoja on vertailtu eri ajoissa, kun ajoissa on syötetty sama viesti ja avain, sama viesti, mutta eri avain sekä eri viesti ja sama avain. Palautusarvon kokoa on myös verrattu avainten kokoon.
+
 ## Testikattavuus
 
 ![](./kuvat/testikattavuus2026-10-10.jpg)

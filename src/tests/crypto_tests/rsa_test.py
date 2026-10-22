@@ -3,6 +3,7 @@ from crypto.rsa import RSACrypto
 from exceptions import rsa_exceptions as exceptions
 from algorithms.primes import PrimesGenerator
 
+
 class TestRSACrypto(unittest.TestCase):
     def setUp(self):
         self.primes_gen = PrimesGenerator(10000)
@@ -26,15 +27,19 @@ class TestRSACrypto(unittest.TestCase):
         self.assertEqual(type(self.keys_256["secret"][0]), type(int()))
         self.assertEqual(type(self.keys_256["secret"][1]), type(int()))
 
-    def test_generate_keys_generates_keys_greater_than_2048_bits_when_class_attribute_key_size_is_2048_bits(self):
+    def test_generate_keys_generates_keys_between_2048_and_4096_bits_when_class_attribute_key_size_is_2048_bits(self):
         crypto = RSACrypto(2048, self.primes_gen, exceptions)
         keys = crypto.generate_keys()
         self.assertGreater(keys["public"][0].bit_length(), 2048)
         self.assertGreater(keys["public"][1].bit_length(), 2048)
         self.assertGreater(keys["secret"][0].bit_length(), 2048)
         self.assertGreater(keys["secret"][1].bit_length(), 2048)
+        self.assertLessEqual(keys["public"][0].bit_length(), 4096)
+        self.assertLessEqual(keys["public"][1].bit_length(), 4096)
+        self.assertLessEqual(keys["secret"][0].bit_length(), 4096)
+        self.assertLessEqual(keys["secret"][1].bit_length(), 4096)
 
-    def test_generate_keys_generates_keys_size_between_64_and_128_bits_when_class_attribute_key_size_is_64_bits(self):
+    def test_generate_keys_generates_keys_of_size_between_64_and_128_bits_when_class_attribute_key_size_is_64_bits(self):
         crypto = RSACrypto(64, self.primes_gen)
         keys = crypto.generate_keys()
         self.assertGreater(keys["public"][0].bit_length(), 64)
@@ -65,11 +70,31 @@ class TestRSACrypto(unittest.TestCase):
         self.assertNotEqual(self.crypto_256.encrypt_text(self.keys_256["public"], "?"),
                             self.crypto_256.encrypt_text(keys["public"], "?"))
 
-    def test_encrypt_text_returns_message_of_greater_size_than_public_keys(self):
-        pass
+    def test_encrypt_text_returns_message_of_greater_bit_size_than_class_attribute_key_size_and_lesser_or_equal_than_public_key_modulus_bit_size_when_key_size_is_512(self):
+        crypto = RSACrypto(512, self.primes_gen, exceptions)
+        keys = crypto.generate_keys()
+        encrypted = crypto.encrypt_text(keys["public"], "Älä mölyä.")
+        self.assertGreater(encrypted.bit_length(), 512)
+        self.assertLessEqual(encrypted.bit_length(), keys["public"][1].bit_length())
+
+    def test_encrypt_text_returns_message_of_greater_bit_size_than_class_attribute_key_size_and_lesser_or_equal_than_public_key_modulus_bit_size_when_key_size_is_1024(self):
+        crypto = RSACrypto(1024, self.primes_gen, exceptions)
+        keys = crypto.generate_keys()
+        encrypted = crypto.encrypt_text(keys["public"], "Älä mölyä.")
+        self.assertGreater(encrypted.bit_length(), 1024)
+        self.assertLessEqual(encrypted.bit_length(), keys["public"][1].bit_length())
 
     def test_decrypt_text_returns_original_message(self):
         message = "Katin kontit!"
-        encrypted = self.crypto_256.encrypt_text(self.keys_256["public"], message)
+        encrypted = self.crypto_256.encrypt_text(
+            self.keys_256["public"], message)
         self.assertEqual(self.crypto_256.decrypt_text(self.keys_256["secret"], encrypted),
+                         message)
+
+    def test_decrypt_text_returns_original_message_of_numbers_letters_and_special_characters(self):
+        crypto = RSACrypto(1024, self.primes_gen, exceptions)
+        keys = crypto.generate_keys()
+        message = "0123456789ABCDEFGHIJKLMNOPQRSTUVXYZÅÄÖabcdefghijklmnopqrstuvxyzåäö§!#'""'¤%&/()=?`^*@${[]}'\'<>|¨~-.,;:_´+"
+        encrypted = crypto.encrypt_text(keys["public"], message)
+        self.assertEqual(crypto.decrypt_text(keys["secret"], encrypted),
                          message)

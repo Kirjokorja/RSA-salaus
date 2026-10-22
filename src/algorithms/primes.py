@@ -60,4 +60,5 @@ class PrimesGenerator:
             p = secrets.randbits(bit_size)
         return p
 
+
 default_primes_gen = PrimesGenerator(10000)
