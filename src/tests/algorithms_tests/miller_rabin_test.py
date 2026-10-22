@@ -13,8 +13,12 @@ class TestMillerRabin(unittest.TestCase):
     def test_is_prime_for_1(self):
         self.assertFalse(miller_rabin.is_prime(2, 1))
 
-    def test_is_prime_for_negative(self):
+    def test_is_prime_for_0(self):
+        self.assertFalse(miller_rabin.is_prime(2, 0))
+
+    def test_is_prime_for_negative_numbers(self):
         self.assertFalse(miller_rabin.is_prime(2, -1))
+        self.assertFalse(miller_rabin.is_prime(2, -543459834))
 
     def test_is_prime_for_lower_bound_larger_than_n_and_n_is_prime(self):
         self.assertTrue(miller_rabin.is_prime(10, 7))

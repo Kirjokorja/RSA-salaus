@@ -9,6 +9,17 @@ class TestPrimesGenerator(unittest.TestCase):
     def test_is_prime_for_2(self):
         self.assertTrue(self.gen.is_prime(2))
 
+    def test_is_prime_for_negative_numbers(self):
+        self.assertFalse(self.gen.is_prime(-2))
+        self.assertFalse(self.gen.is_prime(-10))
+        self.assertFalse(self.gen.is_prime(-578220543932))
+
+    def test_is_prime_for_1(self):
+        self.assertFalse(self.gen.is_prime(1))
+
+    def test_is_prime_for_0(self):
+        self.assertFalse(self.gen.is_prime(0))
+
     def test_is_prime_for_known_prime_3_digits(self):
         self.assertTrue(self.gen.is_prime(757))
 
