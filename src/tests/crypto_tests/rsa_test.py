@@ -75,14 +75,16 @@ class TestRSACrypto(unittest.TestCase):
         keys = crypto.generate_keys()
         encrypted = crypto.encrypt_text(keys["public"], "Älä mölyä.")
         self.assertGreater(encrypted.bit_length(), 512)
-        self.assertLessEqual(encrypted.bit_length(), keys["public"][1].bit_length())
+        self.assertLessEqual(encrypted.bit_length(),
+                             keys["public"][1].bit_length())
 
     def test_encrypt_text_returns_message_of_greater_bit_size_than_class_attribute_key_size_and_lesser_or_equal_than_public_key_modulus_bit_size_when_key_size_is_1024(self):
         crypto = RSACrypto(1024, self.primes_gen, exceptions)
         keys = crypto.generate_keys()
         encrypted = crypto.encrypt_text(keys["public"], "Älä mölyä.")
         self.assertGreater(encrypted.bit_length(), 1024)
-        self.assertLessEqual(encrypted.bit_length(), keys["public"][1].bit_length())
+        self.assertLessEqual(encrypted.bit_length(),
+                             keys["public"][1].bit_length())
 
     def test_decrypt_text_returns_original_message(self):
         message = "Katin kontit!"
@@ -98,3 +100,8 @@ class TestRSACrypto(unittest.TestCase):
         encrypted = crypto.encrypt_text(keys["public"], message)
         self.assertEqual(crypto.decrypt_text(keys["secret"], encrypted),
                          message)
+
+    def test_encrypt_text_raises_message_is_too_long_exception_when_message_is_longer_than_key_modulus(self):
+        with self.assertRaises(exceptions.MessageIsTooLong):
+            self.crypto_256.encrypt_text(
+                self.keys_256["public"], "Minnet, jag har tappat mitt minne. Är jag svensk eller finne? Kommer inte ihåg...")
