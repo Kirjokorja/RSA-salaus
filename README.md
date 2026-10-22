@@ -30,11 +30,13 @@
 poetry install
 ```
 
-3. Käynnistä sovellus käskyllä:
+3. Käynnistä sovellus käskyllä*:
 
 ```bash
 poetry run invoke start
 ```
+
+*Windowsilla ohjelma kannattaa ajaa suoraan komennolla `poetry run python3 src/index.py`, koska Invoke vaikuttaa takkuilevan sillä komentorivikäyttöliittymää käyttävien ohjelmien kanssa.
 
 ### Testaus
 
