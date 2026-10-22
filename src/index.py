@@ -5,7 +5,7 @@ from ui.ui import UI
 
 def main():
     prime_gen = PrimesGenerator(10000)
-    crypto = RSACrypto(prime_gen)
+    crypto = RSACrypto(2048, prime_gen)
     ui = UI(crypto)
 
     ui.start()

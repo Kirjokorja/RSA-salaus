@@ -5,73 +5,67 @@ from algorithms import miller_rabin
 class TestMillerRabin(unittest.TestCase):
 
     def test_is_prime_for_2(self):
-        self.assertEqual(miller_rabin.is_prime(2, 2), True)
+        self.assertTrue(miller_rabin.is_prime(2, 2))
 
     def test_is_prime_for_3(self):
-        self.assertEqual(miller_rabin.is_prime(2, 3), True)
+        self.assertTrue(miller_rabin.is_prime(2, 3))
 
     def test_is_prime_for_1(self):
-        self.assertEqual(miller_rabin.is_prime(2, 1), False)
+        self.assertFalse(miller_rabin.is_prime(2, 1))
 
     def test_is_prime_for_negative(self):
-        self.assertEqual(miller_rabin.is_prime(2, -1), False)
+        self.assertFalse(miller_rabin.is_prime(2, -1))
 
     def test_is_prime_for_lower_bound_larger_than_n_and_n_is_prime(self):
-        self.assertEqual(miller_rabin.is_prime(10, 7), True)
+        self.assertTrue(miller_rabin.is_prime(10, 7))
 
     def test_is_prime_for_lower_bound_larger_than_n_and_n_is_not_prime(self):
-        self.assertEqual(miller_rabin.is_prime(10, 9), False)
+        self.assertFalse(miller_rabin.is_prime(10, 9))
 
     def test_is_prime_for_lower_bound_is_n_and_n_is_prime(self):
-        self.assertEqual(miller_rabin.is_prime(7, 7), True)
+        self.assertTrue(miller_rabin.is_prime(7, 7))
 
     def test_is_prime_for_lower_bound_is_n_and_n_is_not_prime(self):
-        self.assertEqual(miller_rabin.is_prime(8, 8), False)
+        self.assertFalse(miller_rabin.is_prime(8, 8))
 
     def test_is_prime_for_known_prime_8_digits(self):
-        self.assertEqual(miller_rabin.is_prime(2, 43112609), True)
+        self.assertTrue(miller_rabin.is_prime(2, 43112609))
 
     def test_is_prime_for_known_prime_10_digits(self):
-        self.assertEqual(miller_rabin.is_prime(2, 2147483647), True)
+        self.assertTrue(miller_rabin.is_prime(2, 2147483647))
 
     def test_is_prime_for_known_prime_38_digits(self):
-        self.assertEqual(
+        self.assertTrue(
             miller_rabin.is_prime(2, 56713727820156410577229101238628035243),
-            True
-        )
+            )
 
     def test_is_prime_for_known_prime_100_digits(self):
-        self.assertEqual(
+        self.assertTrue(
             miller_rabin.is_prime(
                 2, 2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077),
-            True
-        )
+            )
 
     def test_is_prime_for_known_prime_290_digits(self):
-        self.assertEqual(
+        self.assertTrue(
             miller_rabin.is_prime(2, 66411949393245949268811711602826765576402057646975003006251042260813215340087318062380031915073315092183806206493533345953281647263552710655695269967337089850144857674638489475995919778552032603791816048265084649175429768094838031170157033168866305251844356097795408000548418783227194651709),
-            True
-        )
+            )
 
     def test_is_prime_for_known_prime_300_digits(self):
-        self.assertEqual(
+        self.assertTrue(
             miller_rabin.is_prime(2, 203956878356401977405765866929034577280193993314348263094772646453283062722701277632936616063144088173312372882677123879538709400158306567338328279154499698366071906766440037074217117805690872792848149112022286332144876183376326512083574821647933992961249917319836219304274280243803104015000563790123),
-            True
-        )
+            )
 
     def test_is_prime_for_composite_of_43112609_and_2147483647(self):
-        self.assertEqual(miller_rabin.is_prime(2, 43112609*2147483647), False)
+        self.assertFalse(miller_rabin.is_prime(2, 43112609*2147483647))
 
     def test_is_prime_for_composite_of_2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077_and_56713727820156410577229101238628035243(self):
-        self.assertEqual(
+        self.assertFalse(
             miller_rabin.is_prime(
                 2, 2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077*56713727820156410577229101238628035243),
-            False
-        )
+            )
 
     def test_is_prime_for_composite_of_2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077_and_203956878356401977405765866929034577280193993314348263094772646453283062722701277632936616063144088173312372882677123879538709400158306567338328279154499698366071906766440037074217117805690872792848149112022286332144876183376326512083574821647933992961249917319836219304274280243803104015000563790123(self):
-        self.assertEqual(
+        self.assertFalse(
             miller_rabin.is_prime(2, 2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077 *
                                   203956878356401977405765866929034577280193993314348263094772646453283062722701277632936616063144088173312372882677123879538709400158306567338328279154499698366071906766440037074217117805690872792848149112022286332144876183376326512083574821647933992961249917319836219304274280243803104015000563790123),
-            False
-        )
+            )

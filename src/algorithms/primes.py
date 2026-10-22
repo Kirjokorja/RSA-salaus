@@ -12,7 +12,7 @@ class PrimesGenerator:
                 generaattori laskee pieniä alkulukuja Eratostheneen seulalla
     """
 
-    def __init__(self, max_small_primes):
+    def __init__(self, max_small_primes=10000):
         """Alusta alkulukugeneraattori.
 
             Args:
@@ -59,3 +59,5 @@ class PrimesGenerator:
         while not self.is_prime(p):
             p = secrets.randbits(bit_size)
         return p
+
+default_primes_gen = PrimesGenerator(10000)

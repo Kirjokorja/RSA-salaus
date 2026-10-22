@@ -1,21 +1,32 @@
 import secrets
 from algorithms.euclid import extended_euclid
+from algorithms.primes import default_primes_gen
 from exceptions import (rsa_exceptions as default_exceptions)
 
 
 class RSACrypto:
 
-    def __init__(self, prime_gen, exceptions=default_exceptions):
-        self._prime_gen = prime_gen
+    def __init__(self, key_size=2048, primes_gen=default_primes_gen, exceptions=default_exceptions):
+        self._key_size = key_size
+        self._primes_gen = primes_gen
         self._sys_rand = secrets.SystemRandom()
         self._exceptions = exceptions
+
+    def _encrypt(self, p_key, m):
+        if m >= p_key[1]:
+            raise self._exceptions.MessageIsTooLong(
+                "Salattava viesti on liian pitkä.")
+        return pow(m, p_key[0], p_key[1])
+
+    def _decrypt(self, s_key, cipher_m):
+        return pow(cipher_m, s_key[0], s_key[1])
 
     def get_exceptions(self):
         return self._exceptions
 
     def generate_keys(self):
-        p = self._prime_gen.get_random_prime(2048)
-        q = self._prime_gen.get_random_prime(2048)
+        p = self._primes_gen.get_random_prime(self._key_size)
+        q = self._primes_gen.get_random_prime(self._key_size)
         n = p * q
         phi_n = (p - 1) * (q - 1)
 
@@ -36,15 +47,6 @@ class RSACrypto:
             "secret": (d, n)
         }
         return keys
-
-    def _encrypt(self, p_key, m):
-        if m >= p_key[1]:
-            raise self._exceptions.MessageIsTooLong(
-                "Salattava viesti on liian pitkä.")
-        return pow(m, p_key[0], p_key[1])
-
-    def _decrypt(self, s_key, cipher_m):
-        return pow(cipher_m, s_key[0], s_key[1])
 
     def encrypt_text(self, p_key, text):
         encoded_m = int.from_bytes(text.encode('utf-8'))
