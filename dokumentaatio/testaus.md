@@ -1,5 +1,7 @@
 # Testaus
 
+Ohjelmaa on testattu `Windows 11` ja `Ubuntu` -käyttöjärjestelmillä.
+
 ## Algoritmien testaus
 
 ### Eratostheneen seula
