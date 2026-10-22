@@ -59,25 +59,3 @@ class PrimesGenerator:
         while not self.is_prime(p):
             p = secrets.randbits(bit_size)
         return p
-
-    def get_two_random_primes(self, bit_size):
-        """Metodi tuottaa kaksi annetun kokoista eri alkulukua käyttäen
-        Eratostheneen seulaa ja tarvittaessa Miller-Rabin-algoritmiä.
-
-        Args:
-            bit_size (int): alkulukujen suuruusluokka
-
-        Returns:
-            Set(unsigned long long): alkulukupari
-        """
-        p = secrets.randbits(bit_size)
-        tried = set()
-        while p in tried or not self.is_prime(p):
-            tried.add(p)
-            p = secrets.randbits(bit_size)
-        tried.add(p)
-        q = secrets.randbits(bit_size)
-        while q in tried or not self.is_prime(q):
-            tried.add(q)
-            q = secrets.randbits(bit_size)
-        return (p, q)

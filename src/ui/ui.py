@@ -8,18 +8,18 @@ class UI:
 
     def _generate_keys(self):
         keys = self._crypto_service.generate_keys()
-        print(f"\nJulkinen avainpari: {keys["public"]}\n")
-        print(f"\nYksityinen avainpari: {keys["secret"]}\n")
+        print(f"\nJulkinen avainpari:\n{keys["public"]}\n")
+        print(f"\nYksityinen avainpari:\n{keys["secret"]}\n")
 
     def _encrypt_message(self):
-        public_key_e = input("Anna julkisen avainparin ensimmäinen avain: ")
-        public_key_n = input("Anna julkisen avainparin toinen avain: ")
+        public_key_e = input("\nAnna julkisen avainparin ensimmäinen avain: ")
+        public_key_n = input("\nAnna julkisen avainparin toinen avain: ")
         try:
             key_pair = (int(public_key_e), int(public_key_n))
         except ValueError:
             print("\nAvainparien on oltava kokonaislukuja.\n")
             return
-        message = input("Kirjoita salattava viesti: ")
+        message = input("\nKirjoita salattava viesti: ")
         try:
             encrypted = self._crypto_service.encrypt_text(key_pair, message)
             print(f"\nSalattu viesti: {encrypted}\n")
@@ -27,19 +27,23 @@ class UI:
             print(f"\n{e.message}\n")
 
     def _decrypt_message(self):
-        secret_key_e = input("Anna yksityisen avainparin ensimmäinen avain: ")
-        secret_key_n = input("Anna yksityisen avainparin toinen avain: ")
+        secret_key_e = input("\nAnna yksityisen avainparin ensimmäinen avain: ")
+        secret_key_n = input("\nAnna yksityisen avainparin toinen avain: ")
         try:
             key_pair = (int(secret_key_e), int(secret_key_n))
         except ValueError:
             print("\nAvainparien on oltava kokonaislukuja.\n")
             return
-        message = input("Kirjoita salattu viesti: ")
-        decrypted = self._crypto_service.decrypt_text(key_pair, message)
+        message = input("\nKirjoita salattu viesti: ")
+        try:
+            decrypted = self._crypto_service.decrypt_text(key_pair, message)
+        except ValueError:
+            print("\nSalatun viestin on oltava kokonaisluku.\n")
+            return
         print(f"\nPurettu viesti:\n{decrypted}\n")
 
     def start(self):
-        print("Luo uusi avainpari: syötä 'a'.")
+        print("Luo uudet avainparit: syötä 'a'.")
         print("Salaa viesti: syötä 's'.")
         print("Pura salaus: syötä 'p'.")
         print("Lopeta: syötä 'Lopeta'.")
@@ -47,10 +51,13 @@ class UI:
 
         if command == "a":
             self._generate_keys()
+            print("--------------------")
         if command == "s":
             self._encrypt_message()
+            print("--------------------")
         if command == "p":
             self._decrypt_message()
+            print("--------------------")
         if command == "Lopeta":
             sys.exit()
 
