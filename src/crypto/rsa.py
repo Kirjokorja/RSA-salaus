@@ -15,7 +15,7 @@ class RSACrypto:
     """
 
     def __init__(self, key_size=2048, primes_gen=default_primes_gen, exceptions=default_exceptions):
-        """Alusta RSA-salausluokka.
+        """Alusta RSA-salausolio.
 
             Args:
                 key_size (int): haluttu kokoluokka bitteinä avainten alkuluvuille
