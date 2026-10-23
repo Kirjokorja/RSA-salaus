@@ -35,3 +35,5 @@ Liu, David ja Badr, Mario: *Foundations of Computer Science, Course Notes for CS
 *RSA cryptosystem*. Wikipedian sivu, 2026. https://en.wikipedia.org/wiki/RSA_cryptosystem, vierailtu 2026-10-10.
 
 *Built-in Types*. Pythonin dokumentaation sivu, 2026. https://docs.python.org/3/builtins/stdtypes.html, vierailtu 2026-10-22.
+
+*Bézout’n lemma*. Wikipedian sivu, 2023. https://fi.wikipedia.org/wiki/B%C3%A9zout%E2%80%99n_lemma, vierailtu 2026-10-23.

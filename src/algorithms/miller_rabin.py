@@ -5,8 +5,8 @@ def is_composite(n, witness):
     """Funktio selvittää onko annettu luku yhdistetty luku.
 
     Args:
-        n (unsigned long long): luku, jonka yhdistyneisyyttä selvitetään
-        witness (unsigned long long): luku, jota käytetään todistamaan
+        n (long long): kokonaisluku, jonka yhdistyneisyyttä selvitetään
+        witness (long long): kokonaisluku, jota käytetään todistamaan
         testattavan luvun yhdistyneisyys
 
     Returns:
@@ -32,8 +32,8 @@ def is_prime(lower_bound, n):
     """Funktio selvittää onko annettu luku alkuluku käyttäen Miller-Rabin-algoritmiä.
 
     Args:
-        lower_bound (int): luku, jota pienempiä ei hyväksytä satunnaiseksi koetinluvuksi
-        n (unsigned long long): luku, jonka alkulukuisuutta selvitetään 
+        lower_bound (int): kokonaisluku, jota pienempiä ei hyväksytä satunnaiseksi koetinluvuksi
+        n (long long): kokonaisluku, jonka alkulukuisuutta selvitetään 
 
     Returns:
         bool: palauttaa True, jos luku on todennäköisesti alkuluku ja 
