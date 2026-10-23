@@ -1,13 +1,17 @@
 
 def extended_euclid(a, b):
     """Funktio selvittää parametrien a ja b suurimman yhteisen tekijän.
-    
+
         Args:
-            a (unsigned long long): ensimmäinen kokonaisluvuista, joidenka suurinta yhteistä tekijää etsitään 
-            b (unsigned long long): toinen kokonaisluvuista, joidenka suurinta yhteistä tekijää etsitään
-    
+            a (unsigned long long): ensimmäinen kokonaisluvuista,
+                                    joiden suurinta yhteistä tekijää etsitään 
+            b (unsigned long long): toinen kokonaisluvuista,
+                                    joiden suurinta yhteistä tekijää etsitään
+
         Returns:
-            monikko (unsigned long long, long long, long long), jossa ensimmäinen jäsen on a:n ja b:n suurin yhteinen tekijä ja loput kaksi ovat Bézout’n yhtälön (syt(a,b) = ax + by) kertoimia
+            monikko (unsigned long long, long long, long long): 
+                Monikon ensimmäinen jäsen on a:n ja b:n suurin yhteinen tekijä ja
+                loput kaksi ovat Bézout’n yhtälön (syt(a,b) = ax + by) kertoimia.
     """
     x0, x1, y0, y1 = 1, 0, 0, 1
 
