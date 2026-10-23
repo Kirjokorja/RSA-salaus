@@ -94,7 +94,7 @@ class TestRSACrypto(unittest.TestCase):
                          message)
 
     def test_decrypt_text_returns_original_message_of_numbers_letters_and_special_characters(self):
-        crypto = RSACrypto(1024, self.primes_gen, exceptions)
+        crypto = RSACrypto(2048, self.primes_gen, exceptions)
         keys = crypto.generate_keys()
         message = "0123456789ABCDEFGHIJKLMNOPQRSTUVXYZÅÄÖabcdefghijklmnopqrstuvxyzåäö§!#'""'¤%&/()=?`^*@${[]}'\'<>|¨~-.,;:_´+"
         encrypted = crypto.encrypt_text(keys["public"], message)
@@ -104,4 +104,5 @@ class TestRSACrypto(unittest.TestCase):
     def test_encrypt_text_raises_message_is_too_long_exception_when_message_is_longer_than_key_modulus(self):
         with self.assertRaises(exceptions.MessageIsTooLong):
             self.crypto_256.encrypt_text(
-                self.keys_256["public"], "Minnet, jag har tappat mitt minne. Är jag svensk eller finne? Kommer inte ihåg...")
+                self.keys_256["public"],
+                "Minnet, jag har tappat mitt minne. Är jag svensk eller finne? Kommer inte ihåg...")

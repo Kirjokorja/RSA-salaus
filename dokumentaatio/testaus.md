@@ -24,4 +24,4 @@ LisÃ¤ksi, testiluokka testaa encrypt_text ja decrypt_text -metodeja eri merkkejÃ
 
 ## Testikattavuus
 
-![](./kuvat/testikattavuus2026-10-22.jpg)
+![](./kuvat/testikattavuus2026-10-23.jpg)
