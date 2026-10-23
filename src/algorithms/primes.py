@@ -41,9 +41,7 @@ class PrimesGenerator:
                 return True
             if n % p == 0:
                 return False
-        if miller_rabin.is_prime(self._max_small_primes + 1, n):
-            return True
-        return False
+        return miller_rabin.is_prime(self._max_small_primes + 1, n)
 
     def get_random_prime(self, bit_size):
         """Metodi tuottaa annetun kokoisen alkuluvun käyttäen

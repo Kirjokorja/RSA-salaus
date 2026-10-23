@@ -51,6 +51,11 @@ class TestRSACrypto(unittest.TestCase):
         self.assertLessEqual(keys["secret"][0].bit_length(), 128)
         self.assertLessEqual(keys["secret"][1].bit_length(), 128)
 
+    def test_generate_keys_generates_new_keys_each_run_of_method(self):
+        first_keys = self.crypto_256.generate_keys()
+        second_keys = self.crypto_256.generate_keys()
+        self.assertNotEqual(first_keys, second_keys)
+
     def test_encrypt_text_returns_message_which_does_not_equal_inputed_message(self):
         message = "{Åland!}'24/"
         self.assertNotEqual(self.crypto_256.encrypt_text(self.keys_256["public"], message),
@@ -106,3 +111,11 @@ class TestRSACrypto(unittest.TestCase):
             self.crypto_256.encrypt_text(
                 self.keys_256["public"],
                 "Minnet, jag har tappat mitt minne. Är jag svensk eller finne? Kommer inte ihåg...")
+
+    def test_decrypt_text_raises_message_is_too_long_exception_when_message_is_longer_than_key_n(self):
+        crypto = RSACrypto(64, self.primes_gen)
+        keys = crypto.generate_keys()
+        encrypted = self.crypto_256.encrypt_text(
+            self.keys_256["public"], "Moi!")
+        with self.assertRaises(exceptions.MessageIsTooLong):
+            self.crypto_256.decrypt_text(keys["secret"], encrypted)

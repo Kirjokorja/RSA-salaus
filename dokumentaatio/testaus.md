@@ -18,7 +18,7 @@ PrimesGenerator-luokkaa on testattu luokalla TestPrimesGenerator, joka testaa me
 
 ### RSACrypto-luokka
 
-RSACrypto-luokkaa on testattu luokalla TestRSACrypto. Testiuokka testaa, että generate_keys-metodi tuottaa bittikooltaan suurempia avaimia kuin RSACrypto-luokan key_size-attribuutti, mutta kuitenkin pienempiä kuin key_size tuplattuna. Tätä se testaa attribuutin arvoilla 64 ja 2048. Testiluokka testaa myös, että metodi palauttaa Dictonary-tietorakenteen, joka sisältää kaksi Tuple-rakennetta, joista löytyy avainparit kokonaislukuina.
+RSACrypto-luokkaa on testattu luokalla TestRSACrypto. Testiuokka testaa, että generate_keys-metodi luo uudet avaimet aina metodia kutsuttaessa, sekä että se tuottaa bittikooltaan suurempia avaimia kuin RSACrypto-luokan key_size-attribuutti, mutta kuitenkin pienempiä kuin key_size tuplattuna. Se testaa bittikokoa attribuutin arvoilla 64 ja 2048. Testiluokka testaa myös, että metodi palauttaa Dictonary-tietorakenteen, joka sisältää kaksi Tuple-rakennetta, joista löytyy avainparit kokonaislukuina.
 
 Lisäksi, testiluokka testaa encrypt_text ja decrypt_text -metodeja eri merkkejä ja numeroita sisältävillä eri kokoisilla viesteillä sekä eri kokoisilla avaimilla, joidenka key_size-attribuutin arvo on väliltä 64-2048 bittiä. encrypt_text-metodin palautusarvoa on vertailtu eri ajoissa, kun ajoissa on syötetty sama viesti ja avain, sama viesti, mutta eri avain sekä eri viesti ja sama avain. Kyseisen metodin palautusarvon kokoa on myös verrattu avaimen kokoon. encrypt_text-metodi nostaa MessageIsTooLong-poikkeuden, kun viesti on suurempi tai yhtä suuri kuin avaimen modulus, jota testiluokka testaa myös. decrypt_text-metodin palautusarvoa on vertailtu alkuperäiseen viestiin ennen sen salaamista.
 

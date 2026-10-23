@@ -38,10 +38,14 @@ class UI:
         message = input("\nKirjoita salattu viesti: ")
         try:
             decrypted = self._crypto_service.decrypt_text(key_pair, message)
+            print(f"\nPurettu viesti:\n{decrypted}\n")
+        except self._crypto_service.get_exceptions().MessageIsTooLong as e:
+            print(f"\n{e.message}\n")
+        except UnicodeDecodeError:
+            print("\nSalattua viestiä ei voitu purkaa. " +
+                  "Todennäköisesti, joko avain tai salattu viesti on virheellinen.\n")
         except ValueError:
             print("\nSalatun viestin on oltava kokonaisluku.\n")
-            return
-        print(f"\nPurettu viesti:\n{decrypted}\n")
 
     def start(self):
         print("Luo uudet avainparit: syötä 'a'.")

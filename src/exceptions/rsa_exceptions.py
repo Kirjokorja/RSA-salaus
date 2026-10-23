@@ -1,6 +1,6 @@
 class MessageIsTooLong(Exception):
     """Luokka käsittelee ilmoituksia poikkeustilanteessa, 
-        jossa salattava viesti on liian pitkä.
+        jossa viesti on liian pitkä.
     """
 
     def __init__(self, message):
