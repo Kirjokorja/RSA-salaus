@@ -33,11 +33,11 @@ class RSACrypto:
                 "Salattava viesti on liian pitkä.")
         return pow(m, p_key[0], p_key[1])
 
-    def _decrypt(self, s_key, encrypted_m):
-        if encrypted_m >= s_key[1]:
+    def _decrypt(self, s_key, m):
+        if m >= s_key[1]:
             raise self._exceptions.MessageIsTooLong(
                 "Purettava viesti on liian pitkä.")
-        return pow(encrypted_m, s_key[0], s_key[1])
+        return pow(m, s_key[0], s_key[1])
 
     def get_exceptions(self):
         """Antaa luokan virheilmoitusluokat.

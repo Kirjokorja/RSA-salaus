@@ -1,5 +1,54 @@
 # Toteutus
 
+## Luokkakaavio
+
+```mermaid
+---
+title: RSA-salaus
+---
+classDiagram
+    UI "1" o-- "1" RSACrypto
+    RSACrypto "1" o-- "1" PrimesGenerator
+    class UI{
+        -_crypto_service : RSACrypto
+        -_generate_keys()
+        -_encrypt_message()
+        -_encrypt_message()
+        +UI(crypto_service: RSACrypto)
+        +start()
+    }
+    class RSACrypto{
+        -_key_size: int
+        -_primes_gen: PrimesGenerator
+        -_sys_rand: SystemRandom
+        ~_exceptions: exceptions
+        -_encrypt(p_key: Tuple, m: int) unsigned long long
+        -_decrypt(s_key: Tuple, m: int) unsigned long long
+        +RSACrypto(key_size: int, primes_gen: PrimesGenerator, exceptions: exceptions)
+        +get_exceptions() exceptions
+        +generate_keys() Dictonary
+        +encrypt_text(p_key: Tuple, text: string) unsigned long long
+        +decrypt_text(s_key: Tuple, encrypted: string) string
+    }
+    class PrimesGenerator{
+        -_small_primes: List
+        -_max_small_primes: int
+        +PrimesGenerator(_max_small_primes: int)
+        +is_prime(n: unsigned long long) bool
+        +get_random_prime(bit_size: int) unsigned long long
+    }
+```
+
+## Saavutetut aika- ja tilavaativuus
+
+**Avainten luonti** O(kn^3), missä n on Miller-Rabinin testaaman luvun bittien määrä ja k testattujen lukujen määrä ennen kuin alkuluku löytyy\
+**Salaamisen ja salauksen purkamisen aikavaativuus:** O(n), missä n on salatun viestin pituus bitteinä\
+**Tilavaativuus molemmissa tapauksissa:** O(n), missä n on salattavan tai purettavan viestin pituus bitteinä
+
+## Parannusehdotukset
+
+Käyttöliittymää voisi parantaa mahdollistamalla avainten ja viestien tulostamisen tekstitiedostoihin ja niiden lukemisen tekstitiedostoista. Nykyinen syöttötapa on kovin työläs ja riskialtis käyttäjän virheille. Lisäksi täytteen voisi kokeilla implementoida turvallisuuden lisäämiseksi ja ratkaisu pitkien viestien salaamiseen olisi pätevä löytää.
+
 ## Kielimallien käyttö
 
 En ole käyttänyt laajoja kielimalleja työssäni.
