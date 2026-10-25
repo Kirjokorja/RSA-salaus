@@ -2,7 +2,7 @@
 
 ## Aihe
 
-Toteutan ohjelman, joka salaa tekstiä RSA-salausalgoritmillä. Ohjelmalle annetaan kappale tektiä, jonka merkkien numerokoodit salataan julkisella avaimella. Se palauttaa käyttäjälle salatun viestin ja julkisen avaimen. Salauksen voi purkaa syöttämällä salatun viestin ja sen julkisen avaimen ohjelmaan, joka palauttaa alkuperäisen viestin.
+Toteutan ohjelman, joka salaa tekstiä RSA-salausalgoritmillä. Käyttäjä pystyy pyytämään ohjelmalta salausavaimet. Ohjelma tulostaa käyttäjälle julkisen ja yksityisen avainparin. Käyttäjä pystyy salaamaan ohjelmalla tekstipätkän antamalla sille julkisen avaimen ja salattavan viestin. Käyttäjä pystyy purkamaan salatun vietin ohjelmalla antamalla sille viestin salaamiseen käytetyn avainparin yksityisen avaimen ja salatun vietin.
 
 Ohjelma luo salaisen ja julkisen avaimen luomalla satunnaiset alkuluvut p ja q käyttäen Eratostheneen seulaa ja Miller-Rabin-algoritmiä sekä laskemalla luvut e ja d käyttäen laajennettua Eukleideen algoritmiä. Ohjelma säilyttää julkisen ja salaisen avaimen parina, mistä se käyttää julkista avainta tunnistamaan oikean salaisen avaimen mahdollisesti muista luoduista avaimista. 
 
